@@ -17,7 +17,7 @@ import anx
 import matplotlib
 import networkx
 
-_author__ = 'Petter Bjelland (petter.bjelland@gmail.com)'
+__author__ = 'Brooks MacBeth (bm@shadowdragon.io)'
 
 
 class Pyanx(networkx.DiGraph):
@@ -35,13 +35,12 @@ class Pyanx(networkx.DiGraph):
 
     self.node_id += 1
 
-    super(Pyanx, self).add_node(current_id, 
-        dict(entity_type=entity_type, label=label))
+    super(Pyanx, self).add_node(current_id, entity_type=entity_type, label=label)
 
     return current_id
 
   def add_edge(self, n0, n1, label=''):
-    super(Pyanx, self).add_edge(n0, n1, dict(label=label))
+    super(Pyanx, self).add_edge(n0, n1, label=label)
 
   def layout(self, layout, iterations, space=75):
     layout_func = getattr(networkx, layout)
